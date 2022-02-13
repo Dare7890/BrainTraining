@@ -6,7 +6,7 @@
     padding-right: 15vw;
 }
 
-header {
+.header {
     height: 10vh;
 
     display: flex;
@@ -38,6 +38,23 @@ header {
     position: relative;
     top: 50%;
     left: 5%;
+}
+
+.header-nav {
+    width: 39%;
+
+    margin-left: 3%;
+}
+
+.header-nav ul > li {
+    display: inline-block;
+    padding: 5% 2% 0 2%;
+}
+
+.header-nav ul > li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.4em;
 }
 
 main {

@@ -57,6 +57,11 @@
     font-size: 1.4em;
 }
 
+.header-remaining-time span {
+    font-size: 1.4em;
+    position: relative;
+    top: 35%;
+}
 main {
     height: 85vh;
 }

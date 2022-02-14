@@ -48,13 +48,17 @@
 
 .header-nav ul > li {
     display: inline-block;
-    padding: 5% 2% 0 2%;
+    padding: 6% 2% 0 2%;
 }
 
 .header-nav ul > li a {
     text-decoration: none;
     color: black;
     font-size: 1.4em;
+}
+
+.header-nav ul > li a:hover {
+    border-bottom: 2px solid #A9A9A9;
 }
 
 .header-remaining-time span {

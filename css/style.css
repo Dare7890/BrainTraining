@@ -70,6 +70,49 @@ main {
     height: 85vh;
 }
 
+.main-menu {
+    display: grid;
+    grid-template-columns: 50% 20%;
+    grid-template-rows: 35% 20%;
+}
+
+.question-number {
+    position: relative;
+    text-align: center;
+    top: 20%;
+
+    font-size: 1.4em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.question-text {
+    position: relative;
+    text-align: center;
+    top: 40%;
+
+    font-size: 5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.current-result {
+    position: relative;
+    top: 20%;
+
+    font-size: 1.2em;
+}
+
+#answer {
+    justify-self: center;
+    width: 50%;
+    height: 15%;
+
+    overflow: hidden;
+    border-radius:0.5em;
+    box-shadow: 8px 8px 2px 1px #A9A9A9;
+}
+
 footer {
     height: 5vh;
 }

@@ -18,10 +18,10 @@
             </div>
             <nav class="header-nav">
                 <ul>
-                    <li><a href="#">Новая игра</a></li>
-                    <li><a href="#">Настройки</a></li>
-                    <li><a href="#">Результаты</a></li>
-                    <li><a href="#">Справка</a></li>
+                    <li><a href="#" id="nav-start">Новая игра</a></li>
+                    <li><a href="#" id="nav-setting">Настройки</a></li>
+                    <li><a href="#" id="nav-results">Результаты</a></li>
+                    <li><a href="#" id="nav-help">Справка</a></li>
                 </ul>
             </nav>
             <div class="header-remaining-time">
@@ -30,9 +30,12 @@
             </div>
         </header>
         <main class="main-menu">
-            <div class="question"></div>
-            <span class="current-result"> Результат 0/1</span>
-            <input type="text" name="answer" id="answer">
+            <div class="question">
+                <p class="question-number"></p>
+                <p class="question-text"></p>
+            </div>
+            <span class="current-result" hidden> Правильных ответов: <span class="true-answer-amount" hidden></span></span>
+            <input type="text" name="answer" id="answer" hidden>
         </main>
         <footer>
             <div>
@@ -41,6 +44,7 @@
         </footer>
     </section>
     <script src="js/questionRetriever.js"></script>
+    <script src="js/game.js"></script>
     <script type="module" src="js/script.js"></script>
 </body>
 </html>

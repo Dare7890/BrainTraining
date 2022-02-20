@@ -67,16 +67,18 @@ function processAnswer(event){
         return;
 
     let inputElement = event.target;
-    let userAnswer = inputElement.value
-    if (checkResult(Number(userAnswer), game.currentQuestion.result)){
-        let resultElement = document.getElementsByClassName("true-answer-amount")[0];
-        trueAnswerAmount++;
-        resultElement.textContent = trueAnswerAmount;
-    }
+    let userAnswer = getUserAnswer(inputElement);
+    game.processAnswer(userAnswer);
+    changeTrueAnswerCounter(game.trueAnswersAmount);
 }
 
-function checkResult(userAnswer, trueAnswer){
-    return userAnswer === trueAnswer;
+function getUserAnswer(inputElement){
+    return Number(inputElement.value);
+}
+
+function changeTrueAnswerCounter(trueAnswerAmount){
+    let resultElement = document.getElementsByClassName("true-answer-amount")[0];
+    resultElement.textContent = trueAnswerAmount;
 }
 
 initListeners();

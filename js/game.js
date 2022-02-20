@@ -1,6 +1,8 @@
 'use strict'
 
 export class Game{
+    #trueAnswersAmount = 0;
+
     constructor(questions) {
         this.questions = questions;
 
@@ -33,6 +35,20 @@ export class Game{
         else {
             showInfoAboutEndQuestions();
         }
+    }
+
+    processAnswer(answer){
+        if (this.#checkResult(answer, this.currentQuestion.result)){
+            this.#trueAnswersAmount++;
+        }
+    }
+
+    get trueAnswersAmount(){
+        return this.#trueAnswersAmount;
+    }
+
+    #checkResult(userAnswer, trueAnswer){
+        return userAnswer === trueAnswer;
     }
 
     #showQuestion(question){

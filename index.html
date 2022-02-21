@@ -24,9 +24,12 @@
                     <li><a href="#" id="nav-help">Справка</a></li>
                 </ul>
             </nav>
-            <div class="header-remaining-time">
+            <div class="header-remaining-time" hidden>
                 <span>Время:</span>
-                <span class="remaining-time">10 00</span>
+                <div class="remaining-time">
+                    <span class="time-minutes"></span>
+                    <span class="time-seconds"></span>
+                </div>
             </div>
         </header>
         <main class="main-menu">
@@ -44,7 +47,8 @@
         </footer>
     </section>
     <script src="js/questionRetriever.js"></script>
-    <script src="js/game.js"></script>
+    <script src="js/timer.js"></script>
+    <script type="module" src="js/game.js"></script>
     <script type="module" src="js/script.js"></script>
 </body>
 </html>

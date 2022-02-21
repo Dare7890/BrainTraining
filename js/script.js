@@ -3,7 +3,6 @@
 import { getQuestions } from './questionRetriever.js';
 import { Game } from './game.js'
 
-let trueAnswerAmount = 0;
 let questions = getQuestions();
 let game = null;
 
@@ -26,6 +25,16 @@ function initListeners(){
 function reset(){
     resetAnswerField();
     resetCurrentResult();
+    resetTimer();
+}
+
+function resetTimer() {
+    let timerElement = document.getElementsByClassName("header-remaining-time")[0];
+    timerElement.hidden = false;
+
+    if (game != null){
+        game.resetTimer();
+    }
 }
 
 function resetFieldAfterAsnwer(event){

@@ -1,6 +1,6 @@
 'use strict'
 
-import { getGameTimeRemaining, showTimer, getTimeRemaining } from './timer.js'
+import { initTimer, resetTimer } from './timer.js'
 
 let timer = null;
 
@@ -24,22 +24,11 @@ export class Game{
     }
 
     #initTimer(){
-        let gameTimeMillisec = getGameTimeRemaining(this.#gameTimeMinutes);
-        this.showRemainTime(gameTimeMillisec, () => { this.resetTimer(); });
-        timer = setInterval(this.showRemainTime, 1000, gameTimeMillisec, () => { this.resetTimer(); });
+        initTimer(this.#gameTimeMinutes);
     }
 
     resetTimer(){
-        clearInterval(timer);
-    }
-
-    showRemainTime(mil, resetTimer) {
-        let time = getTimeRemaining(mil);
-        showTimer(time);
-        if (time.total == 0){
-            resetTimer();
-            alert("game over");
-        }
+        resetTimer();
     }
 
     changeQuestion(){

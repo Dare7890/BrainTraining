@@ -1,11 +1,12 @@
 'use strict'
+let timer = null;
 
-export function getGameTimeRemaining(gameTimeMinutes){
+function getGameTimeRemaining(gameTimeMinutes){
     let endtime = addMinutes(new Date(), gameTimeMinutes);
     return endtime;
 }
 
-export function getTimeRemaining(endtime){
+function getTimeRemaining(endtime){
     let remainTime = Date.parse(endtime) - Date.parse(new Date());  
     let seconds = Math.floor( (remainTime/1000) % 60 );  
     let minutes = Math.floor( (remainTime/1000/60) % 60 );
@@ -14,7 +15,22 @@ export function getTimeRemaining(endtime){
      'minutes': minutes,  
      'seconds': seconds  
     };  
-  }
+}
+
+function showRemainTime(milliseconds) {
+    let time = getTimeRemaining(milliseconds);
+    showTimer(time);
+    if (time.total == 0){
+        resetTimer();
+        alert("game over");
+    }
+}
+
+export function initTimer(minutes){
+    let gameTimeMillisec = getGameTimeRemaining(minutes);
+    showRemainTime(gameTimeMillisec);
+    timer = setInterval(showRemainTime, 1000, gameTimeMillisec);
+}
 
 function addMinutes(date, minutes) {
     let milliseconds = castMinutesToMilliseconds(minutes);
@@ -26,10 +42,14 @@ function castMinutesToMilliseconds(minutes){
     return minutes * millisecInMinute;
 }
 
-export function showTimer(time){
+function showTimer(time){
     let minutesElement = document.getElementsByClassName("time-minutes")[0];
     let secondsElement = document.getElementsByClassName("time-seconds")[0];
 
     minutesElement.textContent = time.minutes;
     secondsElement.textContent = time.seconds;
+}
+
+export function resetTimer(){
+    clearInterval(timer);
 }

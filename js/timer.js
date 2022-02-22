@@ -1,4 +1,7 @@
 'use strict'
+
+import { createResultWindow } from './result.js'
+
 let timer = null;
 
 function getGameTimeRemaining(gameTimeMinutes){
@@ -23,6 +26,12 @@ function showRemainTime(milliseconds) {
     if (time.total == 0){
         resetTimer();
         alert("game over");
+        let gameWindow = document.getElementsByClassName("game-window")[0];
+        gameWindow.style.display = "none";
+
+        let mainMenu = document.getElementsByClassName("main-menu")[0];
+        let resultWindow = createResultWindow(3);
+        mainMenu.append(resultWindow);
     }
 }
 

@@ -2,8 +2,6 @@
 
 import { initTimer, resetTimer } from './timer.js'
 
-let timer = null;
-
 export class Game{
     #trueAnswersAmount = 0;
     #gameTimeMinutes = 0.1;
@@ -20,6 +18,7 @@ export class Game{
 
     start(){
         this.#initTimer();
+        this.#showGameWindow();
         this.#showQuestion(this.currentQuestion);
     }
 
@@ -63,6 +62,11 @@ export class Game{
 
     #checkResult(userAnswer, trueAnswer){
         return userAnswer === trueAnswer;
+    }
+
+    #showGameWindow(){
+        let gameWindow = document.getElementsByClassName("game-window")[0];
+        gameWindow.style.display = "grid";
     }
 
     #showQuestion(question){

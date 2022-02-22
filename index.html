@@ -33,12 +33,14 @@
             </div>
         </header>
         <main class="main-menu">
-            <div class="question">
-                <p class="question-number"></p>
-                <p class="question-text"></p>
+            <div class="game-window">
+                <div class="question">
+                    <p class="question-number"></p>
+                    <p class="question-text"></p>
+                </div>
+                <span class="current-result" hidden> Правильных ответов: <span class="true-answer-amount" hidden></span></span>
+                <input type="text" name="answer" id="answer" hidden>
             </div>
-            <span class="current-result" hidden> Правильных ответов: <span class="true-answer-amount" hidden></span></span>
-            <input type="text" name="answer" id="answer" hidden>
         </main>
         <footer>
             <div>
@@ -47,7 +49,8 @@
         </footer>
     </section>
     <script src="js/questionRetriever.js"></script>
-    <script src="js/timer.js"></script>
+    <script src="js/result.js"></script>
+    <script type="module" src="js/timer.js"></script>
     <script type="module" src="js/game.js"></script>
     <script type="module" src="js/script.js"></script>
 </body>

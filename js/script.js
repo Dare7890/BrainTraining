@@ -69,6 +69,7 @@ function changeQuestion(event){
 function initStartGame(){
     let startButtonElement = document.getElementById("nav-start");
     startButtonElement.addEventListener("click", start);
+    startButtonElement.addEventListener("click", clearResultWindow);
 }
 
 function processAnswer(event){
@@ -88,6 +89,14 @@ function getUserAnswer(inputElement){
 function changeTrueAnswerCounter(trueAnswerAmount){
     let resultElement = document.getElementsByClassName("true-answer-amount")[0];
     resultElement.textContent = trueAnswerAmount;
+}
+
+function clearResultWindow(){
+    let resultWindow = document.getElementsByClassName("result-window")[0];
+    if (resultWindow === undefined)
+        return;
+    
+    resultWindow.remove();
 }
 
 initListeners();

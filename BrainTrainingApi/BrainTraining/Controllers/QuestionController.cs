@@ -18,15 +18,10 @@ namespace BrainTraining.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Question>> Index()
+        public async Task<ActionResult<IEnumerable<Question>>> Index()
         {
-            return await repository.GetAllAsync();
+            IEnumerable<Question> questions = await repository.GetAllAsync();
+            return Ok(questions);
         }
-
-        // GET: QuestionController/Details/5
-        //public ActionResult Details(int id)
-        //{
-        //    return View();
-        //}
     }
 }

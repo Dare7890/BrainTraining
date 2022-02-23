@@ -3,14 +3,16 @@
 import { getQuestions } from './questionRetriever.js';
 import { Game } from './game.js'
 
-let questions = getQuestions();
 let game = null;
 
 function start(){
     reset();
 
-    game = new Game(questions)
-    game.start();
+    getQuestions()
+    .then((questions) => {
+        game = new Game(questions)
+        game.start();
+    })
 }
 
 function initListeners(){
